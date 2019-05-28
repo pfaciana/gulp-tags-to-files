@@ -10,7 +10,7 @@ Gulp HTML Tags To Files takes one optional argument
 
 ### tags
 
-(array|string) All the tag names to look for in a string. Example: ['script', 'style']. If you are only look for one tag, you can enter just that tag as a string and it will be converted to an array for you. So, for example `'style'` will be converted to `['style']` automatically. Defaults to ['script'].
+(array|string) All the tag names to look for in a string. Example: ['script', 'style']. If you are only looking for one tag, you can enter just that tag as a string and it will be converted to an array for you. So, for example `'style'` will be converted to `['style']` automatically. Defaults to `['script']`.
 
 
 
