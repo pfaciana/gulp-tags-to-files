@@ -4,7 +4,7 @@ Takes the contents of a Vinyl File Buffer and parses it for html tags and saves 
 
 ## API
 
-<b><code>tags2Files(tags = ['script'], filterCb(content, attrs) => {})</code></b>
+<b><code>tags2Files(tags = ['script'], filterCb(content = '', attrs = {}) => {})</code></b>
 
 Gulp HTML Tags To Files takes one optional argument
 
@@ -25,6 +25,15 @@ var tags2Files = require('gulp-tags-to-files');
 gulp.task('javascript', function () {
 	return gulp.src('./src/**/*.js')
 		.pipe(tags2Files(['script', 'style']))
+		.pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('javascript', function () {
+	return gulp.src('./src/**/*.js')
+		.pipe('script', (content, attrs) => {
+			const encapsulate = typeof attrs['data-encapsulate'] === 'undefined' || !['0', 'false', 'no'].includes(attrs['data-encapsulate'].toLowerCase());
+			return encapsulate ? `(function () { \n ${content} \n })();` : content;
+		}))
 		.pipe(gulp.dest('./dist/'));
 });
 
