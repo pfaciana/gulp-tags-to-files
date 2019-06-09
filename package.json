@@ -1,6 +1,6 @@
 {
 	"name": "gulp-tags-to-files",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Takes the contents of a Vinyl File Buffer and parses it for html tags and saves the innerHTML of those tags into a separate file based on the tag's data-file attribute.",
 	"main": "index.js",
 	"repository": {

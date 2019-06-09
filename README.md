@@ -4,7 +4,7 @@ Takes the contents of a Vinyl File Buffer and parses it for html tags and saves 
 
 ## API
 
-<b><code>tags2Files(tags = ['script'])</code></b>
+<b><code>tags2Files(tags = ['script'], filterCb(content, attrs) => {})</code></b>
 
 Gulp HTML Tags To Files takes one optional argument
 
@@ -12,7 +12,9 @@ Gulp HTML Tags To Files takes one optional argument
 
 (array|string) All the tag names to look for in a string. Example: ['script', 'style']. If you are only looking for one tag, you can enter just that tag as a string and it will be converted to an array for you. So, for example `'style'` will be converted to `['style']` automatically. Defaults to `['script']`.
 
+### filterCb
 
+(function) An optional callback that takes in the content string and the attributes object and returns back the filtered content.
 
 ## Usage
 
