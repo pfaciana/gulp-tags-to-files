@@ -22,7 +22,7 @@ Gulp HTML Tags To Files takes one optional argument
 
 var tags2Files = require('gulp-tags-to-files');
 
-gulp.task('javascript', function () {
+gulp.task('assets', function () {
 	return gulp.src('./src/**/*.js')
 		.pipe(tags2Files(['script', 'style']))
 		.pipe(gulp.dest('./dist/'));
@@ -30,7 +30,7 @@ gulp.task('javascript', function () {
 
 gulp.task('javascript', function () {
 	return gulp.src('./src/**/*.js')
-		.pipe('script', (content, attrs) => {
+		.pipe(tags2Files('script', (content, attrs) => {
 			const encapsulate = typeof attrs['data-encapsulate'] === 'undefined' || !['0', 'false', 'no'].includes(attrs['data-encapsulate'].toLowerCase());
 			return encapsulate ? `(function () { \n ${content} \n })();` : content;
 		}))
