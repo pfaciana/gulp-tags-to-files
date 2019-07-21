@@ -1,6 +1,6 @@
 {
 	"name": "gulp-tags-to-files",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"description": "Takes the contents of a Vinyl File Buffer and parses it for html tags and saves the innerHTML of those tags into a separate file based on the tag's data-file attribute.",
 	"main": "index.js",
 	"repository": {
@@ -20,10 +20,10 @@
 	"author": "Phil Faciana <phil@renderdev.com> (https://renderdev.com/)",
 	"license": "MIT",
 	"homepage": "https://github.com/pfaciana/gulp-tags-to-files",
-	"devDependencies": {
+	"devDependencies": {},
+	"dependencies": {
 		"parse-string-for-tags": "github:pfaciana/parse-string-for-tags",
 		"through2": "^3",
 		"vinyl": "^2"
-	},
-	"dependencies": {}
+	}
 }
